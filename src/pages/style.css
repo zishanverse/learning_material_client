@@ -1,35 +1,62 @@
-
+.flex {
+    display: flex;
+    height: 100vh;
+}
 
 .container {
     padding: 20px;
-    background-color: #000;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+    height: 90%;
+}
+.success {
+    color: green;
+}
+.failure {
+    color: red;
 }
 
 .card {
-    background-color: #ffffff;
+    background-color: #000000;
     padding: 20px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.input {
-    margin: 20px;
+    height: 70%;
+    width: 20%;
+    color: #fff;
+    transition: 0.4s;
 }
 
+.card:hover {
+    box-shadow: 0px 0px 10px 1px grey;
+}
+.head {
+    font-size: 20px;
+    margin-bottom: 40px;
+    width: 90%;
+    text-align: center;
+}
+
+.input {
+    margin: 30px;
+    width: 80%;
+}
+
+
 .option {
-    background-color: #000;
+    background-color: #fff;
     border-width: 0px;
     border-radius: 7px;
     height: 30px;
+    width: 100px;
     margin: 10px;
-    color: #fff;   
+    color: #000;   
+    cursor: pointer;
 }
 
 .studentCard {
@@ -40,7 +67,6 @@
 }
 .select {
     padding: 10px;
-    width: 50%;
     border-radius: 10px;
 }
 
@@ -74,4 +100,10 @@
     align-items: center;
     text-decoration: none;
     width: 100px;
+}
+
+.nav-content {
+    width: 100%;
+    background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20220427/pngtree-webinar-banner-e-learning-internet-lesson-image_1091839.jpg");
+    background-size: cover;
 }

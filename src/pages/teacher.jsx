@@ -1,6 +1,8 @@
 import {useState} from 'react';
 import axios from 'axios';
 import formData from 'form-data';
+import Sidebar from '../components/sidebar';
+import Navbar from '../components/navbar';
 
 
 function Teacher() {
@@ -53,6 +55,8 @@ function Teacher() {
       const res = await axios.put(url, formData, {headers: {"Content-Type": "multipart/form-data",'Access-Control-Allow-Origin': "*",'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'}});
       setError("");
       setMsg("uploaded");
+      setFilename("");
+      selectedFile(null);
     } catch (err) {
       console.error('Error converting PDF:', err.response.data);
       setError(err.response.data);
@@ -64,16 +68,23 @@ function Teacher() {
   
 
   return (
-    <div className="container">
-        
+    <div className='flex'>
+    <Sidebar />
+    <div className='nav-content'>
+      <Navbar />
+      <div className="container">
+          
         <div className='card'>
-      <label htmlFor='filename' className='label'>File Name</label>
-      <input type="text" id="filename" className='select' onChange={(e) => setFilename(e.target.value)} />
-      <input type="file" className='input' onChange={handleFileChange} />
-      <button type="button" onClick={handleFileUpload} className='option'>{msg}</button>
-      {error && <p>{`*${error}`}</p>}
-      {msg === "upload" ? null : <p>"sucessfully uploaded"</p>}
+          <h1 className="head">Upload Learning Material For Your Students</h1>
+          <label htmlFor='filename' className='label'>File Name</label>
+          <input type="text" id="filename" className='select' onChange={(e) => setFilename(e.target.value)} />
+          <input type="file" className='input' onChange={handleFileChange} />
+          <button type="button" onClick={handleFileUpload} className='option'>{msg}</button>
+          {error && <p className='failure'>{`*${error}`}</p>}
+          {msg === "upload" ? null : <p className='success'>sucessfully uploaded</p>}
+        </div>
       </div>
+    </div>
     </div>
   );
 }
