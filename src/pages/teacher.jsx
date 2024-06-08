@@ -37,7 +37,7 @@ function Teacher() {
         contentType: "pdf",
         dateTime: new Date()
     }
-      const options = {method: "PUT",url: 'http://localhost:4000/upload/pdf/',headers: {"Content-Type": "application/json",'Access-Control-Allow-Origin': "*"} , data: fileData}
+      const options = {method: "PUT",url: 'https://learning-material-backend.onrender.com/pdf/',headers: {"Content-Type": "application/json",'Access-Control-Allow-Origin': "*"} , data: fileData}
       
       const response = await axios(options);
       console.log(response.data);

@@ -14,7 +14,7 @@ const Student = () => {
 
     const getData = async () => {
         try {
-            const opt = {method: "PUT", url: "http://localhost:4000/all/pdf", headers: {"Content-Type": "application/json"}, data: {sort: sort}}
+            const opt = {method: "PUT", url: "https://learning-material-backend.onrender.com/all/pdf", headers: {"Content-Type": "application/json"}, data: {sort: sort}}
             const res = await axios(opt);
             const data = res.data;
             setList(data);
@@ -29,7 +29,7 @@ const Student = () => {
         console.log(name.concat(".pdf"));
         const options = {
             method: "PUT",
-            url: "http://localhost:4000/getting/pdf/",
+            url: "https://learning-material-backend.onrender.com/getting/pdf/",
             headers: {"Content-Type" : "application/json"},
             data: {name: name.concat(".pdf")}
         }
