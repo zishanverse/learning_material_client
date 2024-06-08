@@ -1,7 +1,7 @@
 
 import {useState} from 'react';
 import {format} from 'date-fns';
-import './style.css';
+import '../pages/style.css';
 
 const Item = (props) => {
     const [link, setLink] = useState("");
