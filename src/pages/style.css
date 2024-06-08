@@ -1,0 +1,77 @@
+
+
+.container {
+    padding: 20px;
+    background-color: #000;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.input {
+    margin: 20px;
+}
+
+.option {
+    background-color: #000;
+    border-width: 0px;
+    border-radius: 7px;
+    height: 30px;
+    margin: 10px;
+    color: #fff;   
+}
+
+.studentCard {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    align-items: center;
+}
+.select {
+    padding: 10px;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.sort {
+    color: #fff;
+}
+
+.list {
+    padding: 0px;
+    list-style-type: none;
+}
+
+.item {
+    display: flex;
+    width: 90%;
+    padding: 10px;
+    background-color: #ffffff90;
+    margin: 10px;
+    border-radius: 10px;
+    justify-content: space-between;
+
+}
+
+.btn {
+    background-color: #000;
+    border-radius: 10px;
+    border-width: 0px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 100px;
+}
