@@ -1,17 +1,31 @@
 .sidebar {
     height: 100vh;
     width: 20%;
-    background-image: url("https://tse4.mm.bing.net/th?id=OIP.XgXXwTc7Xab1F8Dd73ECiAHaK7&pid=Api&P=0&h=180");
+    /*background-image: url("https://tse4.mm.bing.net/th?id=OIP.XgXXwTc7Xab1F8Dd73ECiAHaK7&pid=Api&P=0&h=180");
+    */
+    background-color: #00000090;
     background-size: cover;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 .logo-card {
-    background-color: #00000050;
+    background-color: #000000;
     padding: 10px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    border-top-right-radius: 20px;
     align-items: center;
     transition: 0.4s;
 }
+.app-name {
+    display: none;
+    color: #fff;
+    margin: 0px;
+    padding: 0px;
+    transition: 0.4s;
+}
+
 .logo {
     height: 50px;
     transition: 0.4s;
@@ -19,11 +33,18 @@
 
 .logo:hover {
     border-radius: 20px;
+    
 }
 
 .logo-card:hover {
     background-color: #000;
     padding: 20px;
+    .app-name {
+        display:block;
+    }
+    .logo {
+        margin-bottom: 10px;
+    }
 }
 
 .bars {
@@ -41,8 +62,9 @@
 }
 
 .bar:hover {
-    background-color: #ffffff50;
+    background-color: #ffffff70;
     color: #000;
+    padding: 5px;
 }
 
 .icon {
@@ -63,4 +85,25 @@
     padding-right: 20px;
     height: 50px;
     background-color: #00000040;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    transition: 0.4s;
+}
+
+.navbar:hover {
+    background-color: #00000070;
+    .icon {
+        color: #fff;
+    }
+}
+.item {
+    display: flex;
+    width: 60vw;
+    padding: 10px;
+    background-color: #ffffff90;
+    margin: 10px;
+    border-radius: 10px;
+    justify-content: space-between;
 }

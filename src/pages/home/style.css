@@ -1,0 +1,26 @@
+.home-container {
+    background-image: url("https://www.wisesecurity.net/wp-content/uploads/2019/11/160-1600491_autodesk-wallpaper-website-background.jpg");
+    min-height: 100vh;
+    background-size: cover;
+    display: flex ;
+}
+.studentCard {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    align-items: center;
+}
+.select {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.sort {
+    color: #fff;
+}
+
+
+.list {
+    padding: 0px;
+    list-style-type: none;
+}

@@ -1,6 +1,6 @@
 import { Route, Routes} from "react-router-dom";
 import Teacher from './pages/teacher.jsx';
-import Home from './pages/home.jsx';
+import Home from './pages/home/home.jsx';
 
 const App = () => (
   <Routes>

@@ -6,6 +6,7 @@ const Sidebar = () => {
     <div className='sidebar'>
         <div className='logo-card'>
             <img className='logo' src="https://tse2.mm.bing.net/th?id=OIP.xpcsEbvuiB7jx0Yec20D-AHaHg&pid=Api&P=0&h=180" alt="logo" />
+            <p className='app-name'>E-Learning App</p>
         </div>
         <ul className='bars'>
             <li className='bar'>Dashboard</li>

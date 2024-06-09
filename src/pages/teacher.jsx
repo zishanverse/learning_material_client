@@ -8,6 +8,7 @@ import Navbar from '../components/navbar';
 function Teacher() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [filename, setFilename] = useState('');
+  const [tag, setTag] = useState('');
   const [error, setError] = useState('');
   const [msg, setMsg] = useState('upload');
 
@@ -38,7 +39,8 @@ function Teacher() {
       const fileData = {
         filename: file,
         contentType: "pdf",
-        dateTime: new Date()
+        dateTime: new Date(),
+        tag: tag
     }
       const options = {method: "PUT",url: 'https://learning-material-backend.onrender.com/upload/pdf/',headers: {"Content-Type": "application/json",'Access-Control-Allow-Origin': "*"} , data: fileData}
       
@@ -56,6 +58,7 @@ function Teacher() {
       setError("");
       setMsg("uploaded");
       setFilename("");
+      setTag("");
       selectedFile(null);
     } catch (err) {
       console.error('Error converting PDF:', err.response.data);
@@ -75,9 +78,16 @@ function Teacher() {
       <div className="container">
           
         <div className='card'>
+          <img src='https://cdn.pixabay.com/photo/2016/01/03/00/43/upload-1118929_1280.png' alt="upload" className='upload' />
           <h1 className="head">Upload Learning Material For Your Students</h1>
-          <label htmlFor='filename' className='label'>File Name</label>
-          <input type="text" id="filename" className='select' onChange={(e) => setFilename(e.target.value)} />
+          <div>
+            <label htmlFor='filename' className='label'>File Name</label>
+            <input type="text" id="filename" value={filename} className='input-text' onChange={(e) => setFilename(e.target.value)} />
+            <br />
+            <br />
+            <label htmlFor='tag' className='label'>Tag Name</label>
+            <input type="text" id="tag" value={tag} className='input-text' onChange={(e) => setTag(e.target.value)} />
+          </div>
           <input type="file" className='input' onChange={handleFileChange} />
           <button type="button" onClick={handleFileUpload} className='option'>{msg}</button>
           {error && <p className='failure'>{`*${error}`}</p>}
