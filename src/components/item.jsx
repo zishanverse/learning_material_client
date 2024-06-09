@@ -53,7 +53,7 @@ const Item = (props) => {
     <li key={item.id} className='item'>
                 <p>{item.filename}</p>
                 <p>{format(item.created_at, "dd-MM-yyyy")}</p>
-                <p>{item.tag}</p>
+                <p>{item.tag_name}</p>
                 {render()}
  
         </li>

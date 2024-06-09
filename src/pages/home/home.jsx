@@ -24,7 +24,6 @@ const Home = () => {
             const opt = {method: "PUT", url: "https://learning-material-backend.onrender.com/all/pdf", headers: {"Content-Type": "application/json"}, data: {sort: sort}}
             const res = await axios(opt);
             const data = res.data;
-            console.log(data);
             setList(data);
             initialList = data;
             setStatus("SUCCESS");
@@ -85,20 +84,21 @@ const Home = () => {
                 return null;
         }
     }
-    const changeFile = (e) => {
+    const changeFile = async (e) => {
         setFilename(e.target.value);
         setStatus("LOADING");
-        const newList = initialList.filter(each => each.filename.toLowerCase() === filename.toLowerCase());
+        const newList = initialList.filter(each => each.filename.toLowerCase().includes(e.target.value.toLowerCase()));
         setList(newList);
         setStatus("SUCCESS");
     }
-    const changeTag = (e) => {
-        setTag(e.target.value);
+    const changeTag = async(e) => {
         setStatus("LOADING");
-        const newList = initialList.filter(each => each.tag_name.toLowerCase() === tag.toLowerCase());
-        setList(newList);
+        setTag(e.target.value);
+        const newList = initialList.filter(each => each.tag_name.toLowerCase().includes(e.target.value.toLowerCase()));
         console.log(newList);
+        setList(newList);
         setStatus("SUCCESS");
+        
     }
   return (
     <div className='home-container'>

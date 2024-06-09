@@ -45,7 +45,6 @@ function Teacher() {
       const options = {method: "PUT",url: 'https://learning-material-backend.onrender.com/upload/pdf/',headers: {"Content-Type": "application/json",'Access-Control-Allow-Origin': "*"} , data: fileData}
       
       const response = await axios(options);
-      console.log(response.data);
       const url = response.data;
       
       const option = {
@@ -59,7 +58,7 @@ function Teacher() {
       setMsg("uploaded");
       setFilename("");
       setTag("");
-      selectedFile(null);
+      setSelectedFile(null);
     } catch (err) {
       console.error('Error converting PDF:', err.response.data);
       setError(err.response.data);
