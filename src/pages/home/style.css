@@ -4,6 +4,13 @@
     background-size: cover;
     display: flex ;
 }
+.home-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .studentCard {
     display: flex;
     justify-content: space-between;
@@ -13,6 +20,7 @@
 .select {
     padding: 10px;
     border-radius: 10px;
+    border: 0px;
 }
 
 .sort {
@@ -23,4 +31,13 @@
 .list {
     padding: 0px;
     list-style-type: none;
+}
+
+.failure {
+    height: 300px;
+    border-radius: 100%;
+}
+.center {
+    display: flex;
+    justify-content: center;
 }

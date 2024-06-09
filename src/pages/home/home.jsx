@@ -5,12 +5,15 @@ import Item from '../../components/item';
 import Sidebar from '../../components/sidebar';
 import './style.css';
 
+let initialList = [];
+
 const Home = () => {
     const [list, setList] = useState([]);
     const [sort, setSort] = useState("ASC");
     const [status, setStatus] = useState("INITIAL");
     const [filename, setFilename] = useState("");
     const [tag, setTag] = useState("");
+    
     useEffect(() => {
         getData();
       }, [sort]);
@@ -21,7 +24,9 @@ const Home = () => {
             const opt = {method: "PUT", url: "https://learning-material-backend.onrender.com/all/pdf", headers: {"Content-Type": "application/json"}, data: {sort: sort}}
             const res = await axios(opt);
             const data = res.data;
+            console.log(data);
             setList(data);
+            initialList = data;
             setStatus("SUCCESS");
           }
           catch (error) {
@@ -45,6 +50,7 @@ const Home = () => {
     }
     const changeSort = (e) => {
         setSort(e.target.value);
+
     }
 
     const success = () => (
@@ -79,10 +85,25 @@ const Home = () => {
                 return null;
         }
     }
+    const changeFile = (e) => {
+        setFilename(e.target.value);
+        setStatus("LOADING");
+        const newList = initialList.filter(each => each.filename.toLowerCase() === filename.toLowerCase());
+        setList(newList);
+        setStatus("SUCCESS");
+    }
+    const changeTag = (e) => {
+        setTag(e.target.value);
+        setStatus("LOADING");
+        const newList = initialList.filter(each => each.tag_name.toLowerCase() === tag.toLowerCase());
+        setList(newList);
+        console.log(newList);
+        setStatus("SUCCESS");
+    }
   return (
     <div className='home-container'>
         <Sidebar />
-        <div>
+        <div className='home-content'>
             <div className='studentCard'>
                 <div className='filter-card'>
                     <h1 className='sort'>Sort by Time</h1>
@@ -91,6 +112,8 @@ const Home = () => {
                         <option value="DESC">Descending</option>
                     </select>
                 </div>
+                <input placeholder='Search By File Name' className="select" value={filename} onChange={changeFile} />
+                <input placeholder='Search By Tag Name' className="select" value={tag} onChange={changeTag} />
             </div>
 
             {render()}
