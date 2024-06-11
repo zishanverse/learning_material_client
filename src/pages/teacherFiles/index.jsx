@@ -1,50 +1,23 @@
 import React from 'react';
-import { FaSearch,FaRegFilePdf } from "react-icons/fa";
 import {useEffect, useState} from 'react';
 import axios from 'axios';
 import { FallingLines } from 'react-loader-spinner';
-import { FaDownload } from "react-icons/fa6";
-import { MdDelete } from "react-icons/md";
+import { FaSearch } from "react-icons/fa";
 import { SlCalender } from "react-icons/sl";
 import Navbar from '../../components/navbar';
 import Sidebar from '../../components/sidebar';
+import TeacherPdfItem from '../../components/teacherpdfitem';
 import './style.css';
 
-const TeacherPdfItem =(item) => (
-  <li className='teacher-pdf-detail' >
-              <hr className='line'/>
-              <div className='pdf-details'>
-                <p className='pdf-text'>File name: <span className='pdf-data-text'>{item.filename}</span></p>
-                <p className='pdf-text'>Date: <span className='pdf-data-text'>{item.created_at}</span></p>
-                <p className='pdf-text'>File Size: <span className='pdf-data-text'>{item.size} MB</span></p>
-                <div className='tags-flex'>
-                  <span className='pdf-text'>Tags: </span>
-                  {item.tags.map(each => <span className='tag-name'>{each}</span>)}
-                </div>
-                <div className='techer-pdf-btns-card'>
-                  <button type="button" className='view-download' >
-                    <FaRegFilePdf />
-                    View
-                  </button>
-                  <button type="button" className='view-download'>
-                    <FaDownload  />
-                    Download
-                  </button>
-                  <button type="button" className='delete'>
-                    <MdDelete />
-                  </button>
-                </div>
-              </div>
-            </li>
-)
 
 
 let initialList = [];
 
 const TeacherPdf = () => {
   const [list, setList] = useState([]);
-  const [sort, setSort] = useState("ASC");
+  const [sort, setSort] = useState(1);
   const [status, setStatus] = useState("INITIAL");
+  const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
     getData();
@@ -53,7 +26,7 @@ const TeacherPdf = () => {
 const getData = async () => {
     try {
         setStatus("LOADING");
-        const opt = {method: "PUT", url: "https://learning-material-backend.onrender.com/all/pdf", headers: {"Content-Type": "application/json"}, data: {sort: sort}}
+        const opt = {method: "GET", url: `https://learning-material-backend.onrender.com/all/pdf?sort=${sort}`, headers: {"Content-Type": "application/json",'Access-Control-Allow-Origin': "*",'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'}}
         const res = await axios(opt);
         const data = res.data;
         console.log(res.data);
@@ -81,7 +54,7 @@ const loading = () => (
 );
 
 const failure = () => (
-    <img src='https://turbo360.com/wp-content/uploads/2023/05/azure-logic-app-failure-alert.png' alt="failure" />
+    <img className="failure" src='https://turbo360.com/wp-content/uploads/2023/05/azure-logic-app-failure-alert.png' alt="failure" />
 )
 const render = () => {
   switch(status) {
@@ -95,6 +68,18 @@ const render = () => {
           return null;
   }
 }
+const techerPdfSearch = (e) => {
+  setSearchValue(e.target.value);
+  const updateList = initialList.filter(each => {
+    if (each.filename.includes(e.target.value)) return true;
+    else {
+      const list = each.tags.filter(each => each.value.includes(e.target.value));
+      if (list.length !== 0) return true;
+      else {return false;}
+    }
+  });
+  setList(updateList);
+}
     return (
     <div className='flex'>
     <Navbar />
@@ -105,7 +90,7 @@ const render = () => {
         <div className='search-calender'>
           <div className='search-container'>
             <FaSearch />
-            <input type="search" placeholder="Search pdf by name, tags, subjects..." className='teacher-pdf-search'/>
+            <input type="search" value={searchValue} placeholder="Search pdf by name, tags, subjects..." className='teacher-pdf-search' onChange={techerPdfSearch}/>
           </div>
           <div className='calender-card'>
             <SlCalender className='calender-logo'/>

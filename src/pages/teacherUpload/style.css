@@ -125,4 +125,6 @@ input[type="file"] {
 .width {
     width: 100%;
     margin-top: 20px;
+    padding: 8px;
+    cursor: pointer;
 }

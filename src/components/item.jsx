@@ -1,7 +1,7 @@
 
 import {useState} from 'react';
 import {format} from 'date-fns';
-import { ColorRing } from 'react-loader-spinner'
+import { ColorRing } from 'react-loader-spinner';
 import '../pages/style.css';
 
 const Item = (props) => {

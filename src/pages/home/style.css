@@ -1,17 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 .home-container {
-    background-image: url("https://www.wisesecurity.net/wp-content/uploads/2019/11/160-1600491_autodesk-wallpaper-website-background.jpg");
     min-height: 100vh;
-    background-size: cover;
-    display: flex ;
 }
 .home-content {
+    background-image: url("https://s3-alpha-sig.figma.com/img/3e91/6ae4/8d894b2c4c65e93fdcffa21ebe52593c?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=E0aS69Cq7Es8zJnQI2DbmqsQRBVVMSvPQ0QKZKytNAOGp8rvOBYMjHCRbpjwF3aCRSS48j4AzxlYMBVgt2SHwk1iTiuRlRlYYuCtDm~RzEq~5jyhN5BwKjdhKWTz3USwUFWq7G8tSb5xlMPI0zMVtC5CStcz1XFkwWR-YOM-dGGB9wrhr~7A4FVnWRP3xKliwbnLp0RBV4PNUdZkBcAFwPLmMhBkMQ17Taz~PBIVHcQd3J047hAavSH3tEJQfV0uykEZl3f3riubYIHesl9yL3tSlzWSNxjYWVGIkvBETr92q10FhFS-qq9JJ6VDcqUKILprLGMki047Eac6EDc6oA__");
+    background-size: cover;
     display: flex;
+    height: 90vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.studentCard {
+.welcome-to-bigbooster {
+    font-family: "Press Start 2P";
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+}
+.home-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 30%;
+}
+
+.caleder-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #595959;
+    border-radius: 5px;
+    padding-right: 10px;
+    width: 90%;
+}
+.home-calender {
+    height: 30px;
+    
+    padding-left: 10px;
+    background-color: #fff;
+    border: 0px; 
+    width: 90%;
+}
+.today-yesterday {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+.yellow-btn {
+    background-color: yellow;
+    padding: 10px;
+    border: 0px;
+    border-radius: 10px;
+    width: 45%;
+}
+.blue-btn {
+    background-color: #323661;
+    margin-top: 10px;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    border:0px;
+    border-radius: 10px;
+}
+
+.home-bottom-card {
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    position: relative;
+    top: 10px;
+    background-color: #EDEDEE;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+.recent-all {
+    margin-top: 10px;
+}
+.recent-btn {
+    color: #fff;
+    background-color: #373737;
+    border:0px;
+    border-radius: 15px;
+    padding: 7px;
+    width: 100px;
+    box-shadow: 0px 0px 10px 1px solid #595959;
+    }
+.all-btn {
+    margin-left: 10px; 
+    background-color: #fff;
+    color: #2F10F0;
+}
+.home-pdfs-list {
+    list-style-type: none;
+    padding: 0px;
+}
+.home-pdf-item {
+    box-shadow: 0px 0px 10px 1px solid #595959;
+    margin-bottom: 20px;
+    width: 40vw;
+    background-color: #fff;
+    border-radius: 10px;
+    
+}
+.item-flex {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.pdf-logo-card {
+    background-color: #ED6C6C;
+    border-radius: 10px;
+    display: flex;
+    padding: 6px;
+    align-items: center;
+    justify-content: center;
+}
+.name-btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.home-view-download {
+    display: flex;
+    align-items: center;
+}
+.home-view-download-btn {
+    border: 1px solid #13D1F4;
+    color: #13D1F4;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 13px;
+    margin-left: 10px;
+
+}
+.date-marks-time {
+    display: flex;
+    color: #ABB5C5;
+    justify-content: space-between;
+    width: 60%;
+    align-items: center;
+}
+.home-pdf-details-logo {
+    margin-right: 10px;
+}
+.syllabus-tags {
+    background-color: #DFE0E0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    align-self: flex-end;
+    gap: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: #48D5F5;
+}
+.syllabus {
+    margin-left: 20px;
+}
+.line-between {
+    height: 40px;
+    width: 1px;
+    background-color: #BEBFC0;
+    border-radius: 2px;
+}
+
+.home-pdf-tags {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.failure {
+    height: 200px;
+    border-radius: 100%;
+}
+
+/*.studentCard {
     display: flex;
     justify-content: space-between;
     width: 70%;
@@ -33,11 +207,9 @@
     list-style-type: none;
 }
 
-.failure {
-    height: 300px;
-    border-radius: 100%;
-}
+
 .center {
     display: flex;
     justify-content: center;
 }
+*/

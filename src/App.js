@@ -6,8 +6,8 @@ import Home from './pages/home/home.jsx';
 const App = () => (
   <Routes>
     <Route exact path="/" element={<Home />} />
-    <Route exact path="/teacher" element={<Teacher />} />
-    <Route exact path="/techer/all-pdfs" element={<TeacherPdf />} />
+    <Route exact path="/techer/upload" element={<Teacher />} />
+    <Route exact path="/teacher/all-pdfs" element={<TeacherPdf />} />
   </Routes>
 )
 

@@ -20,7 +20,7 @@ const Sidebar = () => {
               Upload
             </li>
             </Link>
-            <Link to="/techer/all-pdfs" className='link'><li className='bar'>
+            <Link to="/teacher/all-pdfs" className='link'><li className='bar'>
               <FaFileInvoice className='side-logo'/>
               All PDFs
             </li>

@@ -1,6 +1,8 @@
 import {useState} from 'react';
 import axios from 'axios';
 import formData from 'form-data';
+import { ColorRing } from 'react-loader-spinner';
+import {v4 as uuidv4} from 'uuid';
 import { FaUpload } from "react-icons/fa";
 import { IoMdCloseCircleOutline, IoMdAddCircle } from "react-icons/io";
 import Sidebar from '../../components/sidebar';
@@ -19,6 +21,7 @@ const COLORS = [
 
 function Teacher() {
   const [selectedFile, setSelectedFile] = useState(null);
+  const [status, setStatus] = useState("INITIAL");
   const [filename, setFilename] = useState('');
   const [tag, setTag] = useState('');
   const [error, setError] = useState('');
@@ -44,6 +47,7 @@ function Teacher() {
     
     
     try {
+      setStatus("LOADING");
       const file = filename.concat(".pdf");
       const fileData = {
         filename: file,
@@ -69,10 +73,14 @@ function Teacher() {
       setMsg("uploaded");
       setFilename("");
       setTag("");
+      setTags([]);
+      setStatus("INITIAL");
       setSelectedFile(null);
+      setStatus("SUCCESS");
     } catch (err) {
       console.error('Error converting PDF:', err.response.data);
       setError(err.response.data);
+      setStatus("FAILURE");
       setMsg("");
     }
     
@@ -81,15 +89,45 @@ function Teacher() {
   
 
   const addTag = (e) => {
-      setTags([...tags, {id: tags.length +1, value: tag}]);
+      setTags([...tags, {id: uuidv4(), value: tag}]);
       setTag("");
     }
     
     const deleteTag = (id) => {
       const newList = tags.filter(each => each.id !== id);
+      setTags(newList);
     }
-    
-    
+
+    const loading = () => (
+      <ColorRing
+        visible={true}
+        height="40"
+        width="40"
+        ariaLabel="color-ring-loading"
+        wrapperStyle={{}}
+        wrapperClass="color-ring-wrapper"
+        colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+        />)
+
+    const success = () => "File Uploaded"
+
+      const initial = () => "Click here to submit"
+      const failure = () => "Retry"
+
+      const render = () => {
+        switch(status) {
+          case "INITIAL":
+            return initial();
+          case "SUCCESS":
+            return success();
+          case "FAILURE":
+            return failure();
+          case "LOADING":
+            return loading();
+          default:
+            return null;
+        }
+      }
     return (
     <div className='flex'>
       <Navbar />
@@ -126,7 +164,7 @@ function Teacher() {
                 <IoMdAddCircle className='add-btn' onClick={addTag}/>
                 </div>
               </div>
-              <button type="button" onClick={handleFileUpload} className='upload-btn width'>Click here to submit</button>
+              <button type="button" onClick={handleFileUpload} className='upload-btn width'>{render()}</button>
               {error && <p className='failure'>{`*${error}`}</p>}
               {msg === "upload" ? null : <p className='success'>sucessfully uploaded</p>}
             </div>
