@@ -1,0 +1,128 @@
+
+
+.teacher-upload-container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+}
+
+.content {
+    height: 92%;
+}
+.welcome {
+    font-size: 20px;
+    margin: 0px;
+}
+
+.card {
+    background-color: #fff;
+    padding: 20px;
+    padding-left: 70px;
+    padding-right: 70px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    color: #000;
+    transition: 0.4s;
+}
+input[type="file"] {
+    display: none;
+}
+.input-text {
+    padding: 10px;
+    border-radius: 10px;
+    width: 90%;
+    border: 1px solid #595959;
+    margin-top: 3px;
+    margin-bottom: 10px;
+}
+.tag-input {
+    border: 0px;
+    height: 95%;
+}
+.add-tag-input {
+    height: 40px;
+    border-radius: 10px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    border: 1px solid #595959;
+    margin-top: 3px;
+    margin-bottom: 10px;
+    padding-left: 3px;
+}
+.add-btn {
+    margin-left: auto;
+    margin-right: 10px;
+    font-size: 20px;
+}
+.tag {
+    background-color: #99C0DF;
+    padding: 2px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin-right: 7px;
+}
+
+.label {
+    font-size: 14px;
+}
+
+.file-card {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    width: 94%;
+    border: 1px solid #595959;
+    height: 33px;
+    margin-top: 3px;
+    margin-bottom: 20px;
+}
+.file-upload-logo {
+    border-right: 1px solid #595959;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: 10px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/*.card:hover {
+    box-shadow: 0px 0px 10px 1px grey;
+    border-radius: 20px;
+    height: 80%;
+    width: 25%;
+    font-size: 17px;
+}*/
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
+    background-color: #00000090;
+    color: #fff;
+    width: 80vw;
+}
+
+.upload-btn {
+    background-color:  #333333;
+    color: #fff;
+    border-radius: 10px;
+    width: 150px;
+    font-size: 14px;
+    padding:  6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.width {
+    width: 100%;
+    margin-top: 20px;
+}

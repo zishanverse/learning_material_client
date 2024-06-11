@@ -1,0 +1,119 @@
+.teacher-upload-container {
+    padding: 20px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+.search-calender {
+    background-color:#fff;
+    border-radius: 10px;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    width: 90%;
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    height: 30px;
+    border: 1px solid #595959;
+    border-radius: 5px;
+    width: 40%;
+}
+
+.teacher-pdf-search {
+   border: 0px;
+   border-right: 1px;
+   height: 100%;
+   width: 94%;
+   margin-left: 10px;
+}
+.calender-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid #595959;
+    border-radius: 5px;
+}
+.date {
+    margin: 0px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 13px;
+}
+.calender-logo {
+    padding: 10px;
+    border-right: 1px solid #595959;
+    color: #595959;
+}
+.pdf-list-card {
+    padding: 0px;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.teacher-pdf-detail {
+    background-color: #fff;
+    border-radius: 10px;
+    padding-top: 10px;
+    box-sizing: border-box;
+    width: 20%;
+    margin: 20px;
+}
+.line {
+    background-color: #595959;
+}
+.pdf-details {
+    margin: 10px;
+}
+.pdf-text {
+    color: #000;
+    font-weight: 500;
+    font-size: 13px;
+}
+.pdf-data-text {
+    color: #595959;
+    font-weight: normal;
+}
+.tag-name {
+    background-color: #78CBD6;
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+}
+.techer-pdf-btns-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+.view-download {
+    background-color: #333333;
+    color: #fff;
+    padding: 10px;
+    border: 0px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.delete {
+    background-color: red;
+    color: #fff;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    border-radius: 8px;
+    border: 0px;
+}

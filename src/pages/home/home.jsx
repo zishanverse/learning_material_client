@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 import axios from 'axios';
-import { FallingLines } from 'react-loader-spinner'
+import { FallingLines } from 'react-loader-spinner';
 import Item from '../../components/item';
 import Sidebar from '../../components/sidebar';
 import './style.css';
