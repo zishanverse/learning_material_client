@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import axios from 'axios';
 import formData from 'form-data';
+import {format} from 'date-fns';
 import { ColorRing } from 'react-loader-spinner';
 import {v4 as uuidv4} from 'uuid';
 import { FaUpload } from "react-icons/fa";
@@ -10,14 +11,7 @@ import Navbar from '../../components/navbar';
 import '../style.css';
 import './style.css'
 
-const COLORS = [
-  "#e93a55", "#f94e45", "#ff8549", "#3e993c", "#1e8a78",
-  "#238cd7", "#6d65a8", "#414a53", "#e36dab", "#4abeb7",
-  "#ff8657", "#ffb855", "#84c15f", "#00bd9d", "#00b2d7",
-  "#967cd7", "#a8b2bc", '#fb5779', '#ff7511', '#ffa800',
-  '#ffd100', '#ace60f', '#19db7e', '#00d4c8', '#48dafd',
-  '#008ce3', '#6457f9', '#9f46e4', '#ff78ff', '#ff4ba6'
-]
+
 
 function Teacher() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -52,7 +46,7 @@ function Teacher() {
       const fileData = {
         filename: file,
         contentType: "pdf",
-        dateTime: new Date(),
+        dateTime: format(new Date(), "dd-MM-yyy"),
         tags: tags,
         size: Math.round(selectedFile.size/1048576, 2)
       }

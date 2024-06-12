@@ -1,4 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.home-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 8vh;
+}
+.home-logo-card {
+    display: flex;
+    align-items: center;
+}
+.reload-card {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-content: center;
+    padding: 1px;
+    padding-left: 8px;
+    padding-right: 1px;
+    margin-left: 20px;  
+    border-radius: 15px;
+}
 
 .home-container {
     min-height: 100vh;
@@ -27,6 +50,10 @@
     padding-right: 40px;
     width: 30%;
 }
+.select-date-para {
+    text-align: center;
+    color: #454545;
+}
 
 .caleder-card {
     display: flex;
@@ -39,8 +66,6 @@
 }
 .home-calender {
     height: 30px;
-    
-    padding-left: 10px;
     background-color: #fff;
     border: 0px; 
     width: 90%;
@@ -50,13 +75,6 @@
     margin-top: 20px;
     justify-content: space-between;
     align-items: center;
-}
-.yellow-btn {
-    background-color: yellow;
-    padding: 10px;
-    border: 0px;
-    border-radius: 10px;
-    width: 45%;
 }
 .blue-btn {
     background-color: #323661;
@@ -84,20 +102,8 @@
 .recent-all {
     margin-top: 10px;
 }
-.recent-btn {
-    color: #fff;
-    background-color: #373737;
-    border:0px;
-    border-radius: 15px;
-    padding: 7px;
-    width: 100px;
-    box-shadow: 0px 0px 10px 1px solid #595959;
-    }
-.all-btn {
-    margin-left: 10px; 
-    background-color: #fff;
-    color: #2F10F0;
-}
+
+
 .home-pdfs-list {
     list-style-type: none;
     padding: 0px;
@@ -183,6 +189,13 @@
 .failure {
     height: 200px;
     border-radius: 100%;
+}
+.empty-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /*.studentCard {

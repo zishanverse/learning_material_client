@@ -106,9 +106,9 @@ input[type="file"] {
     justify-content: center;
     align-items: center;
     height: 6vh;
-    background-color: #00000090;
-    color: #fff;
-    width: 80vw;
+    background-color: #A2A2A2;
+    color: #000;
+    width: 85vw;
 }
 
 .upload-btn {

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {useEffect, useState} from 'react';
 import axios from 'axios';
 import { FallingLines } from 'react-loader-spinner';
@@ -26,7 +26,7 @@ const TeacherPdf = () => {
 const getData = async () => {
     try {
         setStatus("LOADING");
-        const opt = {method: "GET", url: `https://learning-material-backend.onrender.com/all/pdf?sort=${sort}`, headers: {"Content-Type": "application/json",'Access-Control-Allow-Origin': "*",'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'}}
+        const opt = {method: "GET", url: `https://learning-material-backend.onrender.com/all/pdf/`}
         const res = await axios(opt);
         const data = res.data;
         console.log(res.data);
@@ -38,23 +38,42 @@ const getData = async () => {
         setStatus("FAILURE");
       }
   }
+
+  const fileOpen = async(name) => {
+    console.log(name.concat(".pdf"));
+    const options = {
+        method: "PUT",
+        url: "https://learning-material-backend.onrender.com/getting/pdf/",
+        headers: {"Content-Type" : "application/json"},
+        data: {name: name.concat(".pdf")}
+    }
+    const res = await axios(options);
+    window.location.href = `${res.data}`;
+    return res.data;
+    //navigate(`${res.data}`, { replace: true });
+}
   const success = () => (
     <ul className='pdf-list-card'>
-      {list.map(each => <TeacherPdfItem key={each.id} item={each}/>)}   
+      {list.map(each => <TeacherPdfItem key={each.id} item={each} func={fileOpen}/>)}   
     </ul>
 );
 
 const loading = () => (
+  <div className='loader'>
     <FallingLines
-        color="#a3c2c2"
+        color="#000"
         width="100"
         visible={true}
         ariaLabel="falling-circles-loading"
     />
+    </div>
 );
 
 const failure = () => (
+  <div className='loader'>
     <img className="failure" src='https://turbo360.com/wp-content/uploads/2023/05/azure-logic-app-failure-alert.png' alt="failure" />
+    <h1>Failed, Please Try Again Later.</h1>
+  </div>
 )
 const render = () => {
   switch(status) {

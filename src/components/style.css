@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap&family=Inria+Sans');
+
+
 .sidebar {
     height: 89vh;
     width: 16vw;
@@ -7,10 +10,9 @@
     flex-direction: column;
     justify-content: space-between;
     
-    background-color: #00000090;
+    background-color: #A2A2A2;
     background-size: cover;
     padding: 10px;
-    border-top-right-radius: 20px;
 }
 .logo-card {
     display: flex;
@@ -54,14 +56,14 @@
     color: #fff;
 }
 .bar {
-    background-color: #00000050;
+    background-color: #fff;
     padding-left: 50px;
     display: flex;
     align-items: center;
     margin-bottom: 20px;
     border-radius: 10px;
-    
-    font-size: 20px;
+    color: #000;
+    font-size: 15px;
     transition: 0.4s;
 }
 .below {
@@ -70,10 +72,11 @@
 .side-logo {
     margin-right: 10px;
     height: 30px;
-    color: #fff;
+    color: #000;
 }
 .sidebar-text {
     margin: 0px;
+    font-size: 15px;
 }
 
 .bar:hover {
@@ -100,8 +103,11 @@
     padding-right: 20px;
     height: 8vh;
     color: #fff;
-    background-color: #00000090;
+    background-color: #000000;
     transition: 0.4s;
+}
+.app-name {
+    font-family: "Inria Sans";
 }
 
 .navbar:hover {
