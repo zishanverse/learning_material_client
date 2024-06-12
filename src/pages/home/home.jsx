@@ -59,8 +59,8 @@ const Home = () => {
     const [date, setDate] = useState(new Date());
     const [todayActive, setTodayActive] = useState(false);
     const [yesterdayActive, setYesterdayActive] = useState(false);
-    const [recent, setRecent] = useState(true);
-    const [all, setAll] = useState(false);
+    const [recent, setRecent] = useState(false);
+    const [all, setAll] = useState(true);
     const [list, setList] = useState([]);
     const [sort, setSort] = useState(1);
     const [status, setStatus] = useState("INITIAL");
