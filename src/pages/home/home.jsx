@@ -116,7 +116,7 @@ const Home = () => {
                         <p>{each.filename}</p>
                         <div className='home-view-download'>
                             <button type="button" className='home-view-download-btn' onClick={() => fileOpen(each.filename)}>Download PDF</button>
-                            <button type="button" className='home-view-download-btn'>
+                            <button type="button" className='home-view-download-btn' onClick={() => fileOpen(each.filename)}>
                                 <FaEye />View
                             </button>
                         </div>

@@ -54,7 +54,7 @@ const getData = async () => {
 }
   const success = () => (
     <ul className='pdf-list-card'>
-      {list.map(each => <TeacherPdfItem key={each.id} item={each} func={fileOpen}/>)}   
+      {list.map(each => <TeacherPdfItem key={each.id} item={each} func={fileOpen} get={getData}/>)}   
     </ul>
 );
 

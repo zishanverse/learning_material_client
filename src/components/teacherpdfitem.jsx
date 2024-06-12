@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import axios from 'axios';
 import { FaRegFilePdf } from "react-icons/fa";
 import { FaDownload } from "react-icons/fa6";
 import { MdDelete } from "react-icons/md";
@@ -8,7 +9,13 @@ const Teacherpdfitem = (props) => {
   const [status, setStatus] = useState("INITIAL");
   const [link, setLink] = useState("");
   
-  const {item, func} = props;
+  const {item, func, get} = props;
+
+  const deleteItem = async(name) => {
+    const opt = {method: "DELETE", url: `https://learning-material-backend.onrender.com/delete?name=${name}`}
+    const res = await axios(opt);
+    get();
+  }
 
   const  getLink = async(name) => {
     setStatus("LOADING");
@@ -73,7 +80,7 @@ const Teacherpdfitem = (props) => {
                     <FaDownload  className='view-download-btn'/>
                     Download
                   </button>
-                  <button type="button" className='delete'>
+                  <button type="button" className='delete' onClick={() => deleteItem(item.filename)}>
                     <MdDelete />
                   </button>
                 </div>
