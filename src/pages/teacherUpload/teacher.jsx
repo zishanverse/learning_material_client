@@ -46,12 +46,14 @@ function Teacher() {
       const fileData = {
         filename: file,
         contentType: "pdf",
-        dateTime: format(new Date(), "dd-MM-yyy"),
+        dateTime: format(new Date(), "dd-MM-yyyy"),
         tags: tags,
-        size: Math.round(selectedFile.size/1048576, 2)
+        size: Math.round(selectedFile.size/1048576, 2),
+        subject: "science",
+        marks: 100,
+        duration: 60
       }
-      console.log(fileData.size);
-      const options = {method: "PUT",url: 'https://learning-material-backend.onrender.com/upload/pdf/',headers: {"Content-Type": "application/json",'Access-Control-Allow-Origin': "*"} , data: fileData}
+      const options = {method: "PUT",url: 'http://localhost:4000/upload/pdf/',headers: {"Content-Type": "application/json",'Access-Control-Allow-Origin': "*"} , data: fileData}
       
       const response = await axios(options);
       const url = response.data;
