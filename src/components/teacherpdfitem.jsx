@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import axios from 'axios';
 import { FaRegFilePdf } from "react-icons/fa";
 import { FaDownload } from "react-icons/fa6";
-import { MdDelete } from "react-icons/md";
+import { RiDeleteBin6Fill } from "react-icons/ri";
 import { ColorRing } from 'react-loader-spinner';
 
 const Teacherpdfitem = (props) => {
@@ -83,13 +83,10 @@ const Teacherpdfitem = (props) => {
                     Download
                   </button>
                   <button type="button" className='delete' onClick={() => deleteItem(item.filename)}>
-                    <MdDelete />
+                    <RiDeleteBin6Fill />
                   </button>
                 </div>
-                <div className='des-card'>
-                
-                </div>
-                <p className='pdf-text'>Description: <span className='pdf-data-text'>{item.description}</span></p>
+                <p className='pdf-text des'>Description: <span className='pdf-data-text'>{item.description}</span></p>
               </div>
             </li>
   )

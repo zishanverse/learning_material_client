@@ -86,13 +86,9 @@
 .teacher-pdf-detail:hover {
     box-shadow: 0px 0px 10px 1px #fff;
     height: 80%;
-    .des-card {
+    .des {
         display: block;
-        background-color: #000;
-        color: #fff;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
+        width: 90%;
     }
 }
 .line {
@@ -148,6 +144,6 @@
     border-radius: 8px;
     border: 0px;
 }
-.des-card {
+.des{
     display: none;
 }
