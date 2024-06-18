@@ -69,6 +69,8 @@ const Teacherpdfitem = (props) => {
                 <p className='pdf-text'>File name: <span className='pdf-data-text'>{item.filename}</span></p>
                 <p className='pdf-text'>Date: <span className='pdf-data-text'>{item.created_at}</span></p>
                 <p className='pdf-text'>File Size: <span className='pdf-data-text'>{item.size} MB</span></p>
+                <p className='pdf-text'>Duration: <span className='pdf-data-text'>{item.duration} Min.</span></p>
+                <p className='pdf-text'>Marks: <span className='pdf-data-text'>{item.marks}</span></p>
                 <div className='tags-flex'>
                   <span className='pdf-text'>Tags: </span>
                   {item.tags.map(eachtag => <span key={eachtag.id} className='tag-name'>{eachtag.value}</span>)}
@@ -84,6 +86,10 @@ const Teacherpdfitem = (props) => {
                     <MdDelete />
                   </button>
                 </div>
+                <div className='des-card'>
+                
+                </div>
+                <p className='pdf-text'>Description: <span className='pdf-data-text'>{item.description}</span></p>
               </div>
             </li>
   )

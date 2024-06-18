@@ -69,7 +69,7 @@
 }
 .right-card {
     right: 20px;
-    top: 40vh;
+    top: 39vh;
     position: absolute;
     border-radius: 17px;
     backdrop-filter: blur(10px);
@@ -288,7 +288,7 @@
     
     .download-logo {
         color: green;
-        right: 79%;
+        right: 77%;
         font-size: 100px;
         rotate: 360deg;
     }
@@ -299,7 +299,7 @@
     .size {
         display: inline;
         top: 80%;
-        right: 54%;
+        right: 57%;
         color: #000;
         font-weight: bold;
     }

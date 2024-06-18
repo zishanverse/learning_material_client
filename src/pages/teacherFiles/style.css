@@ -26,7 +26,7 @@
     justify-content: space-between;
     align-items: center;
     height: 10vh;
-    width: 90%;
+    width: 74vw;
 }
 .search-container {
     display: flex;
@@ -73,13 +73,27 @@
 }
 
 .teacher-pdf-detail {
+    position: relative;
     background-color: #fff;
     border-radius: 10px;
     padding-top: 10px;
     box-sizing: border-box;
     width: 21%;
-    height: 53%;
+    height: 60%;
     margin: 20px;
+    transition: 0.4s;
+}
+.teacher-pdf-detail:hover {
+    box-shadow: 0px 0px 10px 1px #fff;
+    height: 80%;
+    .des-card {
+        display: block;
+        background-color: #000;
+        color: #fff;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
 }
 .line {
     background-color: #595959;
@@ -133,4 +147,7 @@
     font-size: 20px;
     border-radius: 8px;
     border: 0px;
+}
+.des-card {
+    display: none;
 }

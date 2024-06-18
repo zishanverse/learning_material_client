@@ -117,7 +117,7 @@ const ClassItem = styled.div`
 
 const Home = ({deviceType}) => {
     const navigate = useNavigate();
-    const [date, setDate] = useState(new Date());
+    const [date, setDate] = useState("all");
     const [todayActive, setTodayActive] = useState(false);
     const [yesterdayActive, setYesterdayActive] = useState(false);
     const [recent, setRecent] = useState(false);
@@ -140,6 +140,7 @@ const Home = ({deviceType}) => {
             const res = await axios(opt);
             const data = res.data;
             setList(data);
+            console.log(data);
             if (date.length === 0) setStatus("EMPTY")
             initialList = data;
             

@@ -4,7 +4,7 @@ import axios from 'axios';
 import { FallingLines } from 'react-loader-spinner';
 import { FaSearch } from "react-icons/fa";
 import { SlCalender } from "react-icons/sl";
-import Navbar from '../../components/navbar';
+import TeacherNavbar from '../../components/teacherNavbar';
 import Sidebar from '../../components/sidebar';
 import TeacherPdfItem from '../../components/teacherpdfitem';
 import './style.css';
@@ -100,12 +100,12 @@ const techerPdfSearch = (e) => {
   setList(updateList);
 }
     return (
-    <div className='flex'>
-    <Navbar />
-  <div className='side-content'>
-    <Sidebar />
-    <div className='content'>
-      <div className="teacher-upload-container">
+      <div className='background'>
+      <div className='flex'>
+        <TeacherNavbar />
+      <div className='side-content'>
+        <Sidebar />
+        <div className='content'>
         <div className='search-calender'>
           <div className='search-container'>
             <FaSearch />
@@ -116,15 +116,18 @@ const techerPdfSearch = (e) => {
             <p className='date'>22-08-2023</p>
           </div>
         </div>
-            {render()}
+              {render()}
+        </div>
+          <div className='footer'>
+            <p>Copyright @Bigbooster-2024</p>
+          </div>
       </div>
-      <div className='footer'>
-        <p>Copyright @Bigbooster-2024</p>
       </div>
     </div>
-  </div>
-  </div>
 );
 }
 
 export default TeacherPdf
+
+
+
