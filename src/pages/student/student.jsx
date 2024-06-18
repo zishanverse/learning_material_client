@@ -140,7 +140,6 @@ const Home = ({deviceType}) => {
             const res = await axios(opt);
             const data = res.data;
             setList(data);
-            console.log(data);
             if (date.length === 0) setStatus("EMPTY")
             initialList = data;
             
