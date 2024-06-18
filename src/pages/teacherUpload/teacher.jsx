@@ -58,8 +58,7 @@ function Teacher() {
         duration: parseInt(duration),
         description: des
       }
-      console.log(fileData);
-      const options = {method: "PUT",url: 'http://localhost:4000/upload/pdf/',headers: {"Content-Type": "application/json",'Access-Control-Allow-Origin': "*"} , data: fileData}
+      const options = {method: "PUT",url: 'https://learning-material-backend.onrender.com/upload/pdf/',headers: {"Content-Type": "application/json",'Access-Control-Allow-Origin': "*"} , data: fileData}
       
       const response = await axios(options);
       const url = response.data;
@@ -67,7 +66,7 @@ function Teacher() {
       const option = {
         method: "PUT",
         url: url,
-        headers: {"Content-Type": "application/pdf",'Access-Control-Allow-Origin': "*"},
+        headers: {"Content-Type": "application/pdf",'Access-Control-Allow-Origin': "*",'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'},
         body: formData,
       }
       const res = await axios.put(url, formData, {headers: {"Content-Type": "multipart/form-data",'Access-Control-Allow-Origin': "*",'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'}});
