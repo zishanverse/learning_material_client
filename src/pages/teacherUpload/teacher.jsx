@@ -7,7 +7,7 @@ import {v4 as uuidv4} from 'uuid';
 import { FaUpload } from "react-icons/fa";
 import { IoMdCloseCircleOutline, IoMdAddCircle } from "react-icons/io";
 import Sidebar from '../../components/sidebar';
-import Navbar from '../../components/navbar';
+import TeacherNavbar from '../../components/teacherNavbar';
 import '../style.css';
 import './style.css'
 
@@ -21,6 +21,10 @@ function Teacher() {
   const [error, setError] = useState('');
   const [msg, setMsg] = useState('upload');
   const [tags, setTags] = useState([]);
+  const [sub, setSub] = useState("Math");
+  const [duration, setDuration] = useState(60);
+  const [marks, setMarks] = useState(0);
+  const [des, setDes] = useState("");
   
   const handleFileChange = (e) => {
     setSelectedFile(e.target.files[0]);
@@ -49,10 +53,12 @@ function Teacher() {
         dateTime: format(new Date(), "dd-MM-yyyy"),
         tags: tags,
         size: Math.round(selectedFile.size/1048576, 2),
-        subject: "science",
-        marks: 100,
-        duration: 60
+        subject: sub,
+        marks: marks,
+        duration: parseInt(duration),
+        description: des
       }
+      console.log(fileData);
       const options = {method: "PUT",url: 'http://localhost:4000/upload/pdf/',headers: {"Content-Type": "application/json",'Access-Control-Allow-Origin': "*"} , data: fileData}
       
       const response = await axios(options);
@@ -125,52 +131,78 @@ function Teacher() {
         }
       }
     return (
-    <div className='flex'>
-      <Navbar />
-    <div className='side-content'>
-      <Sidebar />
-      <div className='content'>
-        <div className="teacher-upload-container">
-          <div className=''>
-            <h1 className='welcome'>Welcome to teacher PDF upload...</h1>
-            <div className='card'>
-              <p className='upload-btn' >Upload your PDF here</p>
-              <div>
-                <label htmlFor='filename' className='label'>PDF Name</label>
-                <input type="text" id="filename" value={filename} className='input-text' onChange={(e) => setFilename(e.target.value)} />
-                <br />
-                <br />
-                <label className='label' id="des">PDF description</label>
-                <textarea className='input-text'/>
-                <br />
-                <label className='label'>Upload PDF file</label>
-                <div className='file-card'>
-                  <label  htmlFor='file' className='file-upload-logo'> <FaUpload /> </label>  Upload your file 
-                  <input type="file" id="file"  onChange={handleFileChange} />
-                </div>
+    <div className='background'>
+      <div className='flex'>
+        <TeacherNavbar />
+      <div className='side-content'>
+        <Sidebar />
+        <div className='content'>
+          
+              <div className='card'>
+                <div className='teacher-upload-content'>
 
-                <label htmlFor='tag' className='label'>Tags</label>
-                <br />
-                <div className='add-tag-input'>
-                  {tags.map(each => <div key={each.id} className='tag'>
-                      {each.value}
-                      <IoMdCloseCircleOutline onClick={() => deleteTag(each.id)}/>
-                  </div>)}
-                <input type="text" id="tag" value={tag} className='tag-input'  onChange={e => setTag(e.target.value)} />
-                <IoMdAddCircle className='add-btn' onClick={addTag}/>
+                  <p className='teacher-upload-content-para' >Upload your PDF here</p>
+                  <div>
+                    <label htmlFor='filename' className='label'>PDF Name</label>
+                    <input type="text" id="filename" value={filename} className='input-text' onChange={(e) => setFilename(e.target.value)} />
+                    <br />
+                    <label htmlFor='subject' className='label'>Subject</label><br />
+                    <select id="subject" value={sub} className='input-text' onChange={(e) => setSub(e.target.value)}>
+                      <option value="Math">Math</option>
+                      <option value="Physics">Physics</option>
+                      <option value="Chemistry">Chemistry</option>
+                      <option value="Biology">Biology</option>
+                      <option value="English">English</option>
+                    </select>
+                    <br />
+                    <div className='marks-duration-flex'>
+                      <div>
+                        <label htmlFor='marks' className='label'>Marks</label>
+                        <input type="text" id="marks" value={marks} className='input-text' onChange={(e) => setMarks(e.target.value)} />
+                      </div>
+                      <div>
+                        <label htmlFor='duration' className='label'>Duration</label>
+                        <input type="text" id="duration" value={duration} className='input-text' onChange={(e) => setDuration(e.target.value)} />
+                      </div>
+
+                    </div>
+                    <label className='label' id="des">PDF description</label>
+                    <textarea value={des} onChange={(e) => setDes(e.target.value)} className='input-text'/>
+                    <br />
+                    
+
+                    <label htmlFor='tag' className='label'>Tags</label>
+                    <br />
+                    <div className='add-tag-input-flex'>
+                      <div className='add-tag-input'>
+                        {tags.map(each => <div key={each.id} className='tag'>
+                          <span>{each.value}</span>
+                          <IoMdCloseCircleOutline onClick={() => deleteTag(each.id)}/>
+                        </div>)}
+                        <input type="text" id="tag" value={tag} className='tag-input'  onChange={e => setTag(e.target.value)} />
+                      </div>
+                      <IoMdAddCircle className='add-btn' onClick={addTag}/>
+                    </div>
+                  </div>
+                  </div>
+                <div className='upload-container'>
+                  <div className='upload-card'>
+                    <img className='cloud-img' src='https://res.cloudinary.com/deepcnbrz/image/upload/v1718712385/cloud-computing_917811_wrjomn.png' alt="cloud" />
+                    <p className='drag-drop'>Drag & Drop here</p>
+                    <input className='choose-file' type="file" id="file"  onChange={handleFileChange} />
+                  </div>
+                  <button type="button" onClick={handleFileUpload} className='upload-btn width'>{render()}</button>
+                  {error && <p className='failure'>{`*${error}`}</p>}
+                  {msg === "upload" ? null : <p className='success'>sucessfully uploaded</p>}
+                
                 </div>
               </div>
-              <button type="button" onClick={handleFileUpload} className='upload-btn width'>{render()}</button>
-              {error && <p className='failure'>{`*${error}`}</p>}
-              {msg === "upload" ? null : <p className='success'>sucessfully uploaded</p>}
-            </div>
+        </div>
+          <div className='footer'>
+            <p>Copyright @Bigbooster-2024</p>
           </div>
-        </div>
-        <div className='footer'>
-          <p>Copyright @Bigbooster-2024</p>
-        </div>
       </div>
-    </div>
+      </div>
     </div>
   );
 }

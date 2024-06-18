@@ -376,7 +376,7 @@ const Home = ({deviceType}) => {
             itemClass="carousel-item-padding-40-px"
   
             >
-        <ClassItem active={sub == "Math"} onClick={() => subjectChnage("Math")}>
+        <ClassItem active={sub === "Math"} onClick={() => subjectChnage("Math")}>
             <img className='class-item-img' src="https://cdn1.vectorstock.com/i/1000x1000/04/40/black-school-concept-with-maths-subject-vector-23060440.jpg" alt="mathematics" />
             <div className='class-item-content'>
                 <h1 className='sub-name'>Mathematics</h1>
@@ -387,7 +387,7 @@ const Home = ({deviceType}) => {
             </div>
         </ClassItem>
 
-        <ClassItem active={sub == "Physics"} onClick={() => subjectChnage("Physics")}>
+        <ClassItem active={sub === "Physics"} onClick={() => subjectChnage("Physics")}>
             <img className='class-item-img' src="https://tse1.mm.bing.net/th?id=OIP.JMgd683kfIrGHLH3DuabvAHaH5&pid=Api&P=0&h=180" alt="physics" />
             <div className='class-item-content'>
                 <h1 className='sub-name'>Physics</h1>
@@ -398,7 +398,7 @@ const Home = ({deviceType}) => {
             </div>
         </ClassItem>
 
-        <ClassItem active={sub == "Biology"} onClick={() => subjectChnage("Biology")}>
+        <ClassItem active={sub === "Biology"} onClick={() => subjectChnage("Biology")}>
             <img className='class-item-img' src="https://tse3.mm.bing.net/th?id=OIP.ZTFCn0YggScg8FxziJ57AgHaH_&pid=Api&P=0&h=180" alt="biology" />
             <div className='class-item-content'>
                 <h1 className='sub-name'>Biology</h1>
@@ -408,7 +408,7 @@ const Home = ({deviceType}) => {
                 </Link>
             </div>
         </ClassItem>
-        <ClassItem active={sub == "Chemistry"} onClick={() => subjectChnage("Chemistry")}>
+        <ClassItem active={sub === "Chemistry"} onClick={() => subjectChnage("Chemistry")}>
             <img className='class-item-img' src="https://tse3.mm.bing.net/th?id=OIP.fNq0024ds9eDO4KnLvuIywHaGR&pid=Api&P=0&h=180" alt="chemistry" />
             <div className='class-item-content'>
                 <h1 className='sub-name'>Chemistry</h1>
@@ -419,7 +419,7 @@ const Home = ({deviceType}) => {
             </div>
         </ClassItem>
 
-        <ClassItem active={sub == "English"} onClick={() => subjectChnage("English")}>
+        <ClassItem active={sub === "English"} onClick={() => subjectChnage("English")}>
             <img className='class-item-img' src="https://tse1.mm.bing.net/th?id=OIP.C-7s6FBIJqcZJlL7zBTcvwHaH_&pid=Api&P=0&h=180" alt="english" />
             <div className='class-item-content'>
                 <h1 className='sub-name'>English</h1>

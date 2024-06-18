@@ -1,14 +1,27 @@
+.background {
+    background-image: url("https://wallpaperboat.com/wp-content/uploads/2019/10/free-website-background-09.jpg");
+    background-size: cover;
+}
 
-
-.teacher-upload-container {
+.teacher-upload-content {
     padding: 20px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    height: 80vh;
+    margin-left: 20px;
+    width: 50%;
+}
+.teacher-upload-content-para {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 0px;
 }
 
 .content {
-    height: 92%;
+    height: 70vh;
+    position: absolute;
+    top: 13%;
+    left: 20%;
 }
 .welcome {
     font-size: 20px;
@@ -16,19 +29,77 @@
 }
 
 .card {
-    background-color: #fff;
-    padding: 20px;
-    padding-left: 70px;
-    padding-right: 70px;
-    border-radius: 10px;
+    background-color: #ffffff;
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 10px 1px #595959;
+    height: 76vh;
+    border-radius: 20px;
     display: flex;
-    flex-direction: column;
-    width: 40vw;
+    justify-content: space-between;
+    width: 75vw;
     color: #000;
     transition: 0.4s;
 }
-input[type="file"] {
-    display: none;
+@keyframes gradient {
+    from {
+        width: 10%;
+        background-image: linear-gradient(120deg,#111646, #18206B);
+    }
+    to {
+        width: 50%;
+        background-image: linear-gradient(90deg,#111646, #18206B);
+    }
+}
+.upload-container {
+    background-image: linear-gradient(90deg,#111646, #18206B);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -5px 0px 20px 0px #505581;
+    transition: 0.4s;
+    animation-name: gradient;
+    animation-duration: 2s;
+}
+.upload-container:hover {
+    box-shadow: -7px 0px 30px 0px #505581;
+    background-image: linear-gradient(120deg,#111646, #18206B);
+}
+.upload-card {
+    border: 2px dashed #505581;
+    color: #fff;
+    height: 50%;
+    display: flex;
+    width: 50%;
+    border-radius:  20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+.upload-card:hover, .upload-card.drag-drop {
+    opacity: 0.6;
+} 
+.cloud-img {
+    height: 50px;
+    top: 35%;
+    position: absolute;
+}
+.drag-drop {
+    position: absolute;
+    top: 45%;
+}
+.choose-file {
+    opacity: 0;
+    position:relative;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }
 .input-text {
     padding: 10px;
@@ -38,37 +109,61 @@ input[type="file"] {
     margin-top: 3px;
     margin-bottom: 10px;
 }
-.tag-input {
-    border: 0px;
-    height: 95%;
+.input-text:hover,.input-text:focus {
+    box-shadow: 0px 0px 5px 1px #111646;
 }
+.add-tag-input-flex {
+    display: flex;
+    align-items: center;
+}
+
 .add-tag-input {
     height: 40px;
     border-radius: 10px;
     width: 90%;
     display: flex;
     align-items: center;
-    border: 1px solid #595959;
+    border: 1px solid #111646;
     margin-top: 3px;
     margin-bottom: 10px;
     padding-left: 3px;
 }
+.add-tag-input:hover, .add-tag-input:focus {
+    box-shadow: 0px 0px 5px 1px #111646;
+}
+.tag-input {
+    border: 0px;
+    height: 100%;
+    background-color: transparent;
+}
+.tag-input:focus {
+    border-radius: 10px;
+}
 .add-btn {
     margin-left: auto;
     margin-right: 10px;
-    font-size: 20px;
+    margin-bottom: 10px;
+    font-size: 25px;
 }
 .tag {
     background-color: #99C0DF;
-    padding: 2px;
+    padding-left: 7px;
+    padding-right: 7px;
     border-radius: 10px;
     display: flex;
     align-items: center;
+    height: 75%;
+    gap: 7px;
     margin-right: 7px;
 }
 
 .label {
     font-size: 14px;
+}
+.marks-duration-flex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .file-card {
@@ -101,30 +196,54 @@ input[type="file"] {
     font-size: 17px;
 }*/
 
+@keyframes footer {
+    from {
+        right: 100%;
+    }
+    to {
+        right: 0%;
+    }
+}
+
 .footer {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 6vh;
-    background-color: #A2A2A2;
+    background-color: #ffffff50;
     color: #000;
-    width: 85vw;
+    width: 100vw;
+    position: absolute;
+    bottom: 10px;
+    border-radius: 17px;
+    animation-name: footer;
+    animation-duration: 2s;
+    transition: 0.4s;
+}
+.footer:hover {
+    background-color: #fff;
 }
 
 .upload-btn {
-    background-color:  #333333;
-    color: #fff;
+    background-color: #fff;
+    color: #111646;
     border-radius: 10px;
     width: 150px;
     font-size: 14px;
     padding:  6px;
     display: flex;
     justify-content: center;
+    width: 70%;
+    height: 30px;
+    margin-top: 50px;
     align-items: center;
+    border: 0px;
+    font-weight: bold;
+    transition: 0.4s;
 }
-.width {
-    width: 100%;
-    margin-top: 20px;
-    padding: 8px;
-    cursor: pointer;
+.upload-btn:hover {
+    height: 35px;
+    box-shadow: 0px 0px 5px 1px #fff;
+    border-radius: 20px;
+    width: 60%;
 }
