@@ -83,12 +83,12 @@
         top: 0;
     }
     to {
-        top: 39vh;
+        top: 38vh;
     }
 }
 .right-card {
     right: 20px;
-    top: 39vh;
+    top: 38vh;
     position: absolute;
     border-radius: 17px;
     backdrop-filter: blur(10px);
@@ -131,9 +131,6 @@
     font-size: 20px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    
-}
-.search-logo {
     
 }
 .student-pdf-search {
@@ -378,10 +375,6 @@
     display: flex;
     gap: 5px;
 }
-.student-pdf-details-logo {
-
-}
-
 
 
 

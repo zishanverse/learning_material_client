@@ -61,7 +61,7 @@ const getData = async () => {
 const loading = () => (
   <div className='loader'>
     <FallingLines
-        color="#000"
+        color="#fff"
         width="100"
         visible={true}
         ariaLabel="falling-circles-loading"
