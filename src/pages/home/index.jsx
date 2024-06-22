@@ -4,12 +4,16 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
     position: relative;
-
+    height: 100vh;
+    
     .spline {
         position: absolute;
         top: 0;
         right: 0;
         margin: 0;
+
+        @media (max-width: 575px) {
+        }
     }
 `;
 
@@ -27,7 +31,12 @@ const Content = styled.div`
     border-radius: 30px;
     backdrop-filter: blur(10px);
     background-color: #00000050;
-    
+    transition: 0.4s;
+    &:hover {
+      background-color: #00000080;
+      color: #ffffff80;
+    }
+      
 `;
 
 const GetStarted = styled.h1`
@@ -53,7 +62,7 @@ const HomeBtn = styled.button`
     height: 35px;
     box-shadow: rgba(var(--primary-color), 0.5) 0px 0px 20px 0px;
     font-family: "Oswald", sans-serif;
-    
+    cursor: pointer;
     border: 2px solid #59595950;
     backdrop-filter: blur(10px);
     background-color: #ffffff80;
