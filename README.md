@@ -1,70 +1,140 @@
-# Getting Started with Create React App
+# Big Booster Learning App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+Big Booster Learning App is a web application designed for 12th-grade students to access and download study materials in PDF format. The application also provides teachers an interface to upload and manage PDF files. The project is built using React.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+### Student Interface
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Home Page**: Welcome page with a "Start" button redirecting to the student page.
+- **Student Page**: View all available PDF files with options to sort and filter by:
+  - Date
+  - File name
+  - Tag names
+  - Duration of course
+  - Subjects
+- **Download PDFs**: Students can download the PDFs.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Teacher Interface
 
-### `npm test`
+- **Upload Page**: Teachers can upload PDF files with details:
+  - Name
+  - Subject
+  - Marks
+  - Duration
+  - Tags
+  - Description
+- **Manage PDFs Page**: Teachers can view all uploaded PDF files with options to:
+  - View
+  - Download
+  - Delete
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Structure
 
-### `npm run build`
+The project is organized into the following structure:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+big-booster-learning-app/
+│
+├── public/
+│   ├── index.html
+│   └── ...
+│
+├── src/
+│   ├── components/
+│   │   ├── navbar.jsx
+│   │   ├── sidebar.jsx
+│   │   ├── style.css
+│   │   ├── teacherNavbar.jsx
+│   │   ├── teacherpdfitem.jsx
+│   │   └── ...
+│   │
+│   ├── pages/
+│   │   ├── home/
+│   │   |   ├── index.jsx
+│   │   |   ├── style.css
+|   |   |   
+|   |   ├── student/
+|   |   |   └── ...
+|   |   ├── teacherFiles/
+|   |   |   └── ...
+|   |   ├── teacherUpload/
+|   |   |   └── ...
+|   |   └── ...
+│   │
+│   ├── App.js
+│   ├── index.js
+│   └── ...
+│
+├── .env
+├── .gitignore
+├── package.json
+├── README.md
+└── ...
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
 
-### `npm run eject`
+- Node.js (>= v20.13.1)
+- npm (>= 10.5.2)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/zishanverse/learning_material_client
+   cd learning_material_client
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Running the App
 
-## Learn More
+To start the development server, run:
+```bash
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Usage
 
-### Code Splitting
+### Home Page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Click the "Start" button to navigate to the Student Page.
 
-### Analyzing the Bundle Size
+### Student Page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- View all available PDFs.
+- Use sorting and filtering options to find the desired PDFs.
+- Click on a PDF to download it.
 
-### Making a Progressive Web App
+### Teacher Upload Page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Fill in the details and upload a PDF file for students.
 
-### Advanced Configuration
+### Teacher Manage Page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- View all uploaded PDFs.
+- Use options to view, download, or delete any PDF.
 
-### Deployment
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
 
-### `npm run build` fails to minify
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+Feel free to reach out if you have any questions or need further assistance.
+
+Happy learning!
