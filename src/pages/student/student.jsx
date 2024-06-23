@@ -171,7 +171,7 @@ const Home = ({deviceType}) => {
             data: {name: name.concat(".pdf")}
         }
         const res = await axios(options);
-        //navigate(`${res.data}`, { replace: true });
+        navigate(`${res.data}`, { replace: true });
         window.location.href = `${res.data}`;
         //return res.data;
     }
@@ -429,7 +429,7 @@ const Home = ({deviceType}) => {
                 </Link>
             </div>
         </ClassItem>
-        </Carousel>;
+        </Carousel>
 
         <div className='student-section-name-card'>
             <h1 className='student-section-text'>Explore & Learn</h1>
