@@ -172,7 +172,7 @@ const Home = ({deviceType}) => {
         }
         const res = await axios(options);
         window.location.href = `${res.data}`;
-        navigate(`${res.data}`, { replace: true });
+        //navigate(`${res.data}`, { replace: true });
         //return res.data;
     }
 
