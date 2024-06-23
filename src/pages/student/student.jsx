@@ -136,7 +136,7 @@ const Home = ({deviceType}) => {
     const getData = async () => {
         try {
             setStatus("LOADING");
-            const opt = {method: "GET", url: `http://localhost:4000/all/pdf?sort=${sort}&date=${date}`}
+            const opt = {method: "GET", url: `https://learning-material-backend.onrender.com/all/pdf?sort=${sort}&date=${date}`}
             const res = await axios(opt);
             const data = res.data;
             setList(data);
