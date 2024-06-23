@@ -136,7 +136,7 @@ const Home = ({deviceType}) => {
     const getData = async () => {
         try {
             setStatus("LOADING");
-            const opt = {method: "GET", url: `https://learning-material-backend.onrender.com/all/pdf?sort=${sort}&date=${date}`}
+            const opt = {method: "GET", url: `https://learning-material-backend.onrender.com/all/pdf?sort=${sort}&date=${date}`, headers: {"Content-Type": "application/pdf",'Access-Control-Allow-Origin': "*",'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'}}
             const res = await axios(opt);
             const data = res.data;
             setList(data);
@@ -167,14 +167,15 @@ const Home = ({deviceType}) => {
         const options = {
             method: "PUT",
             url: "https://learning-material-backend.onrender.com/getting/pdf/",
-            headers: {"Content-Type" : "application/json"},
+            headers: {"Content-Type": "application/json",'Access-Control-Allow-Origin': "*",'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'},
             data: {name: name.concat(".pdf")}
         }
         const res = await axios(options);
-        navigate(`${res.data}`, { replace: true });
         window.location.href = `${res.data}`;
+        navigate(`${res.data}`, { replace: true });
         //return res.data;
     }
+
     const changeSort = (e) => {
         setSort(e.target.value);
 
