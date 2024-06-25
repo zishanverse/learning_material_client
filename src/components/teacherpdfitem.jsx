@@ -21,7 +21,6 @@ const Teacherpdfitem = (props) => {
     setStatus("LOADING");
     const li = await func(name);
     setLink(li);
-    console.log(li);
     setStatus("SUCCESS");
   }
 

@@ -47,8 +47,8 @@ const getData = async () => {
     }
     const res = await axios(options);
     console.log(res.data);
-    window.location.href = `${res.data}`;
-    return res.data;
+    //window.location.href = `${res.data}`;
+    //return res.data;
     //navigate(`${res.data}`, { replace: true });
 }
   const success = () => (
