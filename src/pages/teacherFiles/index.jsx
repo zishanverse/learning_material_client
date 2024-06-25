@@ -41,12 +41,12 @@ const getData = async () => {
   const fileOpen = async(name) => {
     console.log(name.concat(".pdf"));
     const options = {
-        method: "PUT",
-        url: "https://learning-material-backend.onrender.com/getting/pdf/",
-        headers: {"Content-Type" : "application/json"},
-        data: {name: name.concat(".pdf")}
+        method: "GET",
+        url: `https://learning-material-backend.onrender.com/getting/pdf/?name=${name.concat(".pdf")}`,
+        headers: {'Access-Control-Allow-Origin': "*",'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'}
     }
     const res = await axios(options);
+    console.log(res.data);
     window.location.href = `${res.data}`;
     return res.data;
     //navigate(`${res.data}`, { replace: true });

@@ -166,10 +166,11 @@ const Home = ({deviceType}) => {
     const fileOpen = async(name) => {
         const options = {
             method: "GET",
-            url: `https://learning-material-backend.onrender.com/getting/pdf/?NAME=${name.concat(".pdf")}`,
+            url: `https://learning-material-backend.onrender.com/getting/pdf/?name=${name.concat(".pdf")}`,
             headers: {'Access-Control-Allow-Origin': "*",'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'},
         }
         const res = await axios(options);
+        console.log(res.data);
         window.location.href = `${res.data}`;
         //navigate(`${res.data}`, { replace: true });
         //return res.data;
