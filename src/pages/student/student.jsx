@@ -136,7 +136,7 @@ const Home = ({deviceType}) => {
     const getData = async () => {
         try {
             setStatus("LOADING");
-            const opt = {method: "GET", url: `https://learning-material-backend.onrender.com/all/pdf?sort=${sort}&date=${date}`, headers: {"Content-Type": "application/pdf",'Access-Control-Allow-Origin': "*",'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'}}
+            const opt = {method: "GET", url: `https://learning-material-backend.onrender.com/all/pdf?sort=${sort}&date=${date}`, headers: {'Access-Control-Allow-Origin': "*",'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'}}
             const res = await axios(opt);
             const data = res.data;
             setList(data);

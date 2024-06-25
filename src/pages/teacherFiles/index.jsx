@@ -26,10 +26,9 @@ const TeacherPdf = () => {
 const getData = async () => {
     try {
         setStatus("LOADING");
-        const opt = {method: "GET", url: `https://learning-material-backend.onrender.com/all/pdf/`}
+        const opt = {method: "GET", url: `https://learning-material-backend.onrender.com/all/pdf/`, headers: {'Access-Control-Allow-Origin': "*",'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'}}
         const res = await axios(opt);
         const data = res.data;
-        console.log(res.data);
         setList(data);
         initialList = data;
         setStatus("SUCCESS");
