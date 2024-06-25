@@ -66,11 +66,11 @@ function Teacher() {
       const option = {
         method: "PUT",
         url: url,
-        headers: {"Content-Type": "application/pdf",'Access-Control-Allow-Origin': "*",'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'},
+        headers: {'Access-Control-Allow-Origin': "*",'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'},
         body: formData,
       }
-      //const res = await axios.put(url, formData, {headers: {"Content-Type": "application/pdf",'Access-Control-Allow-Origin': "*",'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'}});
-      const res = await axios(option);
+      const res = await axios.put(url, formData, {headers: {"Content-Type": "application/pdf","Content-Disposition": "inline",'Access-Control-Allow-Origin': "*",'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'}});
+      //const res = await axios(option);
       setError("");
       setMsg("uploaded");
       setFilename("");

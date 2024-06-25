@@ -69,7 +69,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    height: 100%;
+    height: 87%;
     overflow-y: auto;
 }
 @keyframes pdfItem {
@@ -89,7 +89,7 @@
     padding-top: 15px;
     box-sizing: border-box;
     width: 21%;
-    height: 60%;
+    height: 70%;
     margin: 20px;
     
     animation-name: pdfItem;
@@ -99,7 +99,7 @@
 .teacher-pdf-detail:hover {
     box-shadow: 0px 0px 10px 1px #fff;
     border-radius: 20px; 
-    height: 80%;
+    height: 87%;
     .des {
         display: block;
         width: 90%;

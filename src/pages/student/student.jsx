@@ -170,7 +170,6 @@ const Home = ({deviceType}) => {
             headers: {'Access-Control-Allow-Origin': "*",'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'},
         }
         const res = await axios(options);
-        console.log(res.data);
         window.location.href = `${res.data}`;
         //navigate(`${res.data}`, { replace: true });
         //return res.data;

@@ -46,8 +46,7 @@ const getData = async () => {
         headers: {'Access-Control-Allow-Origin': "*",'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'}
     }
     const res = await axios(options);
-    console.log(res.data);
-    //window.location.href = `${res.data}`;
+    window.location.href = `${res.data}`;
     //return res.data;
     //navigate(`${res.data}`, { replace: true });
 }
